@@ -5,17 +5,27 @@
 		<meta charset="UTF-8">
 		<title>New Tab</title>
 		<style>
-			#webretro-container {
-				width: 800px;
-				height: 600px;
-			}
-            body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(24,24,24);
-            color: white;
-            text-align: center;
-            font-size: medium;
-        }
+			body {
+                font-family: Arial, sans-serif;
+                background-color: rgb(24,24,24);
+                color: white;
+                text-align: center;
+                margin: 0;
+                padding: 20px;
+                /* Flexbox helps keep everything in a neat vertical column */
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+            }
+
+            #webretro-container {
+                width: 800px;
+                height: 600px;
+                background-color: #000; /* Black background while loading */
+                border: 4px solid #333; /* Sublte frame */
+                box-shadow: 0 0 30px rgba(0,0,0,0.5);
+                margin-top: 20px;
+            }
 		</style>
 	</head>
 	<body>
