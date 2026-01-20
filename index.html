@@ -1,106 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(24,24,24);
+            color: white;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
+        /* --- Seamless Gradient Animation --- */
+        @keyframes shiftGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
 
-<!--Specifies what <body> elements should look like. Here it's set Arial-->
-<style>
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: rgb(24,24,24);
-    color: white;
-}
+        /* --- The Grid Layout --- */
+        .grid-container {
+            display: grid;
+            /* Column 1: Buttons | Column 2: Name | Column 3: Buttons */
+            grid-template-columns: 1fr 2fr 1fr; 
+            grid-template-rows: repeat(3, 1fr); 
+            width: 95vw;
+            height: 70vh;
+            align-items: center;
+            justify-items: center;
+        }
 
-.verybigtext {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-size: 1000%;
-    text-align: center;
-}
+        .verybigtext {
+            grid-column: 2;
+            grid-row: 1 / span 3; /* Spans all 3 rows to stay centered */
+            font-size: 8vw; 
+            font-weight: bold;
+            text-transform: lowercase;
+            white-space: nowrap;
 
-.space {
-    color: rgb(100, 148, 237);
-}
+            background: linear-gradient(
+                to right, 
+                rgb(100, 148, 237) 0%, 
+                rgb(241, 37, 37) 50%,   
+                rgb(100, 148, 237) 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shiftGradient 12s linear infinite;
+        }
 
-.pirate {
-    color: rgb(241, 37, 37)
-}
+        /* --- Button Styling --- */
+        button {
+            border: 1px solid #8c8c8c;
+            padding: 0.6rem 1.2rem;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 500px;
+            background: #9e9e9e;
+            color: #000000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 130px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-button {
-    border: px solid #8c8c8c; /* border */
-    padding: 0.5rem 1rem;
-    font-weight: 700;
-    font-size: 17px;
-    border-radius: 500px;
-    background: #9e9e9e; /* background color */
-    color: #000000; /* text color */
-}
+        button:hover {
+            transform: scale(1.1);
+            background: #ffffff;
+            box-shadow: 0 0 15px rgba(241, 37, 37, 0.4);
+        }
 
-.about-button{
-    float:left;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
+        /* Left Column Buttons */
+        .left-col  { grid-column: 1; justify-self: end; padding-right: 20px; }
+        /* Right Column Buttons */
+        .right-col { grid-column: 3; justify-self: start; padding-left: 20px; }
 
-.slh-button{
-    float:right;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
-
-.otherleft-button{
-    float:left;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-}
-
-.otherright-button{
-    float:right;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-}
-
-</style>
-
-<title>Spacepirate</title>
+    </style>
 </head>
 <body>
-<div class="about-button">
-    <a href="portfolio/about.html">
-    <button>aboutButton</button>
-</a>
-</div>
 
-<div class="slh-button">
-    <a href="portfolio/slh.html">
-    <button>SLH</button>
-</a>
-</div>
+    <div class="grid-container">
+        <div class="left-col" style="grid-row: 1;">
+            <a href="epiclovegame.html"><button>epiclove</button></a>
+        </div>
+        <div class="left-col" style="grid-row: 2;">
+            <a href="slh.html"><button>SLH</button></a>
+        </div>
+        <div class="left-col" style="grid-row: 3;">
+            <a href="historyoftheinternet/homepage.html"><button>history</button></a>
+        </div>
 
-<div class="otherleft-button">
-    <a href="tutorial1b/tutorial1b.html">
-    <button>otherLeft</button>
-</a>
-</div>
+        <div class="verybigtext">sam skinner</div>
 
-<div class="otherright-button">
-    <a href="tutorial1b/tutorial1b.html">
-    <button>otherRight</button>
-</a>
-</div>
+        <div class="right-col" style="grid-row: 1;">
+            <a href="slh.html"><button>doom</button></a>
+        </div>
+        <div class="right-col" style="grid-row: 2;">
+            <a href="unixcommands.html"><button>unix</button></a>
+        </div>
+        <div class="right-col" style="grid-row: 3;">
+            <a href="#"><button>streamlit</button></a>
+        </div>
+    </div>
 
-
-
-<div class="verybigtext">
-    <div class="space">space</div>
-    <div class="pirate">pirate</div>
-</div>
 </body>
-</html
+</html>

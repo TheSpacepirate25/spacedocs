@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>New Tab</title>
+		<style>
+			#webretro-container {
+				width: 800px;
+				height: 600px;
+			}
+            body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(24,24,24);
+            color: white;
+            text-align: center;
+            font-size: medium;
+        }
+		</style>
+	</head>
+	<body>
+		<h1>DOOM</h1>
+		<form action="sneshomepage.html" method="get">
+            <button type="submit">Back to SNES homepage</button>
+          </form>
+		  <br>
+		  <br>
+		<div id="webretro-container"></div>
+		<br>
+		
+		<script type="text/javascript" src="embed.js"></script>
+		<script>
+			var frame = webretroEmbed(document.getElementById("webretro-container"), "https://binbashbanana.github.io/webretro/", {core: "autodetect", rom: "doom.smc"});
+			document.getElementById("fullscreen").onclick = function() {
+				frame.requestFullscreen();
+			};
+		</script>
+	</body>
+</html>
