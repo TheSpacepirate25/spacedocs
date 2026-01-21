@@ -30,11 +30,6 @@
 	</head>
 	<body>
 		<h1>DOOM</h1>
-		<form action="index.html" method="get">
-            <button type="submit">Back to homepage</button>
-          </form>
-		  <br>
-		  <br>
 		<div id="webretro-container"></div>
 		<br>
 		
@@ -45,6 +40,9 @@
 				frame.requestFullscreen();
 			};
 		</script>
+		Yes, it's the full DOOM game just like on the SNES. I used webretro, which is libretro cores compiled to Web Assembly using emscripten. 
+		Libretro is a library of 'cores' that tell emulators how to actually display the content on your screen. I then use an iframe to link to webretro's website, where I load DOOM's ROM file that is hosted with the site.
+		I've been working with libretro, webretro and retroarch for years and I highly recommend using them.
 		<br><a href="index.html">Back to homepage</a>
 	</body>
 </html>
