@@ -3,6 +3,7 @@
 <head>
     <title>Homepage</title>
     <style>
+        /* thanks claude for helping with the css because i dont know how to centre a div */
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(24,24,24);
@@ -15,16 +16,12 @@
             overflow: hidden;
         }
 
-        /* --- Seamless Gradient Animation --- */
         @keyframes shiftGradient {
             0% { background-position: 0% 50%; }
             100% { background-position: 200% 50%; }
         }
-
-        /* --- The Grid Layout --- */
         .grid-container {
             display: grid;
-            /* Column 1: Buttons | Column 2: Name | Column 3: Buttons */
             grid-template-columns: 1fr 2fr 1fr; 
             grid-template-rows: repeat(3, 1fr); 
             width: 95vw;
@@ -35,7 +32,7 @@
 
         .verybigtext {
             grid-column: 2;
-            grid-row: 1 / span 3; /* Spans all 3 rows to stay centered */
+            grid-row: 1 / span 3;
             font-size: 8vw; 
             font-weight: bold;
             text-transform: lowercase;
@@ -54,46 +51,64 @@
             animation: shiftGradient 6s linear infinite;
         }
 
-        /* --- Button Styling --- */
         button {
-            border: 1px solid #8c8c8c;
+            background-color: #ffffff;
+            color: #181818;
+            border: none;
             padding: 0.6rem 1.2rem;
             font-weight: 700;
             font-size: 14px;
-            border-radius: 500px;
-            background: #9e9e9e;
-            color: #000000;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             width: 130px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         button:hover {
-            transform: scale(1.1);
-            background: #ffffff;
-            box-shadow: 0 0 15px rgba(241, 37, 37, 0.4);
+            background-color: #cccccc;
+            transform: scale(1.05);
         }
 
-        /* Left Column Buttons */
-        .left-col  { grid-column: 1; justify-self: end; padding-right: 20px; }
-        /* Right Column Buttons */
-        .right-col { grid-column: 3; justify-self: start; padding-left: 20px; }
+        .left-col  { 
+            grid-column: 1; 
+            grid-row: 1 / span 3; 
+            justify-self: end; 
+            padding-right: 20px; 
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        
+        .right-col { 
+            grid-column: 3; 
+            grid-row: 1 / span 3; 
+            justify-self: start; 
+            padding-left: 20px; 
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
 
     </style>
 </head>
 <body>
 
     <div class="grid-container">
-        <div class="left-col" style="grid-row: 1;">
-            <a href="epiclovegame.html"><button>epiclove</button></a>
+        <!-- Left Side Buttons -->
+        <div class="left-col">
+            <a href="blog.html"><button>blog</button></a>
+            <a href="games.html"><button>games</button></a>
         </div>
 
+        <!-- Center Name -->
         <div class="verybigtext">sam skinner</div>
 
-        <div class="right-col" style="grid-row: 1;">
-            <a href="doom.html"><button>doom</button></a>
+        <!-- Right Side Buttons -->
+        <div class="right-col">
+            <a href="projects.html"><button>projects</button></a>
+            <a href="contact.html"><button>contact</button></a>
         </div>
     </div>
 
