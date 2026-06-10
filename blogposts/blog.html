@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Blog - Homepage</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: rgb(24,24,24);
+				color: white;
+				margin: 0;
+				padding: 20px;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center; 
+			}
+
+			.main-container {
+				max-width: 650px;
+				width: 100%;
+				text-align: left;
+			}
+
+			h1 {
+				margin-bottom: 5px;
+			}
+
+			.subtitle {
+				color: #888;
+				font-size: 0.9em;
+				margin-bottom: 40px;
+			}
+
+			.post-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.post-item {
+				margin-bottom: 25px;
+				font-size: 1.1em;
+			}
+
+			.post-date {
+				color: #888; 
+				font-size: 0.85em;
+				margin-left: 10px;
+			}
+
+			a {
+				color: #4da6ff;
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			.footer-link {
+				display: block;
+				margin-top: 50px;
+				border-top: 1px solid #333;
+				padding-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="main-container">
+			<!-- header -->
+			<h1>Blog</h1>
+			<br>
+			<!-- put posts here -->
+			<ul class="post-list">
+				
+				<li class="post-item">
+					<a href="slh-post.html">making slh</a>
+					<span class="post-date">— 10/6/26</span>
+				</li>
+			</ul>
+
+			<a class="footer-link" href="index.html">← Back to homepage</a>
+		</div>
+
+	</body>
+</html>
